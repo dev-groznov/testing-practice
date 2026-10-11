@@ -25,3 +25,12 @@ const calculator = {
 }
 
 export { calculator }
+
+export function analyzeArray(arr) {
+    return {
+        average: arr.reduce((acc, curr) => acc + curr, 0) / arr.length,
+        min: arr.reduce((acc, curr) => (curr < acc ? curr : acc)),
+        max: arr.reduce((acc, curr) => (curr > acc ? curr : acc)),
+        length: arr.length
+    }
+}

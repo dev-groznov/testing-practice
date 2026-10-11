@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from './function.js'
+import { capitalize, reverseString, calculator, analyzeArray } from './function.js'
 
 test('First character capitalized (1)', () => {
     expect(capitalize('go home')).toBe('Go home')
@@ -48,3 +48,10 @@ test('3 multiply 4 is 243', () => {
     expect(calculator.multiply(3, 5)).toBe(243)
 })
 
+test('processing the massif (1)', () => {
+    expect(analyzeArray([1,8,3,4,2,6])).toEqual({average: 4, min: 1, max: 8, length: 6})
+})
+
+test('processing the massif (2)', () => {
+    expect(analyzeArray([-2, 2, 23, 475, 931, 5121])).toEqual({average: 1091.6666666666667, min: -2, max: 5121, length: 6})
+})
