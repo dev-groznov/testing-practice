@@ -34,3 +34,23 @@ export function analyzeArray(arr) {
         length: arr.length
     }
 }
+
+export function caesarCipher(str, num) {
+    str = str.split('')
+
+    for(let i = 0; i < str.length; i++) {
+        if ('a'.charCodeAt(0) <= str[i].charCodeAt(0) && str[i].charCodeAt(0) <= 'z'.charCodeAt(0)) {
+            str[i] = String.fromCharCode(((str[i].charCodeAt(0) + num) 
+                % ('z'.charCodeAt(0) + 1)
+                % 'a'.charCodeAt(0))
+                + 'a'.charCodeAt(0))
+        } else if ('A'.charCodeAt(0) <= str[i].charCodeAt(0) && str[i].charCodeAt(0) <= 'Z'.charCodeAt(0)) {
+            str[i] = String.fromCharCode(((str[i].charCodeAt(0) + num) 
+                % ('Z'.charCodeAt(0) + 1)
+                % 'A'.charCodeAt(0))
+                + 'A'.charCodeAt(0))
+        }
+    }
+
+    return str.join('')
+}

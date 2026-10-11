@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, analyzeArray } from './function.js'
+import { capitalize, reverseString, calculator, analyzeArray, caesarCipher } from './function.js'
 
 test('First character capitalized (1)', () => {
     expect(capitalize('go home')).toBe('Go home')
@@ -54,4 +54,16 @@ test('processing the massif (1)', () => {
 
 test('processing the massif (2)', () => {
     expect(analyzeArray([-2, 2, 23, 475, 931, 5121])).toEqual({average: 1091.6666666666667, min: -2, max: 5121, length: 6})
+})
+
+test('ceaser cipher (simple)', () => {
+    expect(caesarCipher('abc', 3)).toEqual('def')
+})
+
+test('ceaser cipher (normal)', () => {
+    expect(caesarCipher('xyz', 3)).toEqual('abc')
+})
+
+test('ceaser cipher (hard)', () => {
+    expect(caesarCipher('Hello, World!', 3)).toEqual('Khoor, Zruog!')
 })
